@@ -19,7 +19,6 @@ def main():
     print('\ncell width: ' + str(columnWidth) + ', height: ' + str(columnHeight))
 
     width, height = image.size
-    imgNo = 0
 
     rowsCount = int(height / columnHeight)
     columnsCount = int(width / columnWidth)
@@ -37,6 +36,12 @@ def main():
         endIndex = int(sys.argv[6])
     except:
         print('No custom end index given. Outputting entire grid of ' + str(rowsCount * columnsCount) + ' cells.')
+
+    imgNo = 0
+    try:
+        imgNo = int(sys.argv[7])
+    except:
+        print('No custom image number given. Starting from 0.')
 
     row = 0
     for i in range(0, height, columnHeight):
